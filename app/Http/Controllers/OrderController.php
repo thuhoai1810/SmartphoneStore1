@@ -94,8 +94,7 @@ class OrderController extends Controller
     }
 
         /**
-     * cho nay phan ro ra 2 endpoint cho admin va customer,
-     * vs admin de chung la cacel thoi
+     * có 2 endpoint cho admin và customer
      * @param  int  $code
      * @return \Illuminate\Http\Response
      */
@@ -104,18 +103,18 @@ class OrderController extends Controller
         $order = Order::where('order_code',$code)->first();
         if($order->status != 0) return redirect()->route('order.list')->with('error','Chỉ đơn hàng chờ xác nhận mới được huỷ');
         $order->update(['status' => 3]);
-        // day la cho return ve  router minh mong muon sau khi update thanh cong, em dang dinh nghia my.order la danh sach order cua khach hang
+        // order.list là danh sách các đơn hàng bên trang admin
         return redirect()->route('order.list')->with('success','Huỷ đơn hàng thành công.');
     }
 
-    // vs customer chi cho ho cancel order cua ho tao va o trang thai cho xac nhan moi  cancel
+    // huỷ đơn hàng cho customer khi đơn hàng ở trạng thái chờ xác nhận
     public function cancelMyOrder($code)
     {
         $order  =  Order::where('order_code',$code)->first();
         if($order->status != 0) return redirect()->route('my.order')->with('error','Chỉ đơn hàng chờ xác nhận mới được huỷ');
         $order->update(['status' => 3]);
         $customer_id = $order->customer_id;
-        // day la cho return ve  router minh mong muon sau khi update thanh cong, em dang dinh nghia my.order la danh sach order cua khach hang
+        // my.order la danh sach order cua khach hang
         return redirect()->route('my.order',['id' =>$customer_id])->with('success','Huỷ đơn hàng thành công.');
     }
 

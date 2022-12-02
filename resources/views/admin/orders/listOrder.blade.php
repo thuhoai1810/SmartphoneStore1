@@ -53,9 +53,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('order.see',['code' => $row->order_code]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{ route('order.see',['code' => $row->order_code]) }}" style="margin-right:1rem;"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     @if($row->status === 0)
-                                    <a href="{{ route('order.confirm',['code'=>$row->order_code]) }}"><i class="fa fa-check-square" aria-hidden="true"></i></i></a>
+                                    <a href="{{ route('order.confirm',['code'=>$row->order_code]) }}" style="margin-right:1rem;"><i class="fa fa-check-square" aria-hidden="true"></i></i></a>
                                     <a href="{{ route('order.cancel',['code'=>$row->order_code]) }}"><i class="fa fa-times" aria-hidden="true"></i></i></a>
                                     @endif
                                   

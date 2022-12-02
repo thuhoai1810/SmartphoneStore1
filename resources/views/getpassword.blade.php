@@ -10,7 +10,7 @@
                    <a href="{{  route('index') }}">Trang chủ</a>
               </li>
               <li class="icon active">
-                   <a {{  route('login') }}>Đăng nhập</a>
+                   <a {{  route('resetpwdForm') }}>Khôi phục lại mật khẩu</a>
               </li>
          </ul>
     </div>

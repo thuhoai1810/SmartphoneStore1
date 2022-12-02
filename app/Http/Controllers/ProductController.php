@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Mail\ThankMail;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
@@ -195,17 +196,17 @@ class ProductController extends Controller
      */
     public function addToCart(Request $request, $id)
     {
-        if(Auth::check()){
-            
+        // if(Auth::check()){
             $product = Product::find($id);
             $oldCart = Session::has('cart') ? Session::get('cart') : null;
             $cart = new Cart($oldCart);
             $cart->add($product,$product->id);
             $request->session()->put('cart',$cart);
             return redirect()->route('product.detail',['id' => $product->id])->with('success','Thêm giỏ hàng thành công');
-        }else{
-            return redirect()->route('login')->with("invalid","Vui lòng đăng nhập trước khi mua hàng");
-        }
+        // }else{
+        //     return redirect()->route('login')->with("invalid","Vui lòng đăng nhập trước khi mua hàng");
+
+        // }
     }  
     
     /**
@@ -248,6 +249,10 @@ class ProductController extends Controller
     public function checkout(){
         if(!Session::has('cart')){
             return view('cart');
+        }
+        // dd(Auth::check());
+        if(!Auth::check() || !Session::get('customer')){
+            return redirect()->route('login')->with("invalid","Vui lòng đăng nhập trước khi mua hàng");
         }
         $oldCart = Session::get('cart');
         $id = Session::get('customer')->id;

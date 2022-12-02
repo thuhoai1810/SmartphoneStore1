@@ -74,6 +74,15 @@ Route::get('forgetpwd',['uses'=>'AccountController@forgetPasswordForm','as'=>'fo
 
 Route::post('forgetpwd',['uses'=>'AccountController@forgetPassword','as'=>'forgetpwd']);
 
+Route::get('changepwdForm',['uses'=>'AccountController@changePasswordForm','as'=>'changepwdForm']);
+
+// Route::get('/changepwdForm', function () {
+//     return view('changepwd');
+// })->name('changepwdForm');
+
+
+Route::post('changepwd/{id}',['uses'=>'AccountController@changePassword','as'=>'changepwd']);
+
 Route::get('/getpassword/{mail}','AccountController@getPasswordForm');
 
 Route::post('updatepwd',['uses'=>'AccountController@updatePassword','as'=>'updatepwd']);

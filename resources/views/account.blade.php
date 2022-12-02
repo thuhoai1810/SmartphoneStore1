@@ -33,7 +33,7 @@
                               </a>
                          </li>
                          <li>
-                              <a href="{{  route('resetpwdForm') }}">
+                              <a href="{{  route('changepwdForm') }}">
                                    <i class="fas fa-sign-in-alt"></i>
                                    Thay đổi mật khẩu
                               </a>
@@ -65,7 +65,7 @@
                     <div class="form-checkout account-detail">
                          <h2>THÔNG TIN TÀI KHOẢN</h2>
                          <p>Email: {{ Session::get('customer')->email }}</p>
-                         <p>Mật khẩu: *** <a href="{{  route('resetpwdForm') }}"><i class="fas fa-edit"></i></a></p>
+                         <p>Mật khẩu: *** <a href="{{  route('changepwdForm') }}"><i class="fas fa-edit"></i></a></p>
                     </div>
                     <div class="heading-lg">
                          <h1>Thông tin cá nhân</h1>
