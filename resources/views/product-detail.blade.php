@@ -53,7 +53,7 @@
             @endif
             <div class="row mt-4 mb-3">
                 <div class="col-md-6 sp-large">
-                    <a href=""><img src="{{ asset('storage/images/products/'.$product['image_path']) }}" alt="{{ $product['id'] }}"
+                    <a href=""><img src="{{ asset('/images/products/'.$product['image_path']) }}" alt="{{ $product['id'] }}"
                             alt=""></a>
                 </div>
                 <div class="col-md-6 describe">
@@ -153,7 +153,7 @@
                             <div class="card">
                                 <div class="card-image">
                                     <a href="{{ route('product.detail',['id' => $item['id']]) }}">
-                                        <img src="{{ asset('storage/images/products/'.$item['image_path']) }}" class="card-img-top" />
+                                        <img src="{{ asset('/images/products/'.$item['image_path']) }}" class="card-img-top" />
                                     </a>
                                 </div>
                             </div>

@@ -11,7 +11,7 @@
                 <h5 class="new-title">MỘT SỐ THƯƠNG HIỆU</h5>
                 <ul>
                     @foreach ($brands as $brand)
-                        <a href="{{ route('brand.product',['id' => $brand['id']]) }}"><img src="{{ asset('storage/images/brands/'.$brand['img_path']) }}" class="img-responsive mt-3" width="200px" height="100px" /></a>
+                        <a href="{{ route('brand.product',['id' => $brand['id']]) }}"><img src="{{ asset('/images/brands/'.$brand['img_path']) }}" class="img-responsive mt-3" width="200px" height="100px" /></a>
                     @endforeach
                 </ul>
             </div>
@@ -25,7 +25,7 @@
                                 <div class="product-item">
                                     <div class="image">
                                         <a href="{{ route('product.detail',['id' => $product->id]) }}">
-                                            <img src="{{ asset('storage/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
+                                            <img src="{{ asset('/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
                                         </a>
                                         <a href="{{ route('product.detail',['id' => $product->id]) }}" class="more-info"><i class="fas fa-search"></i> XEM THÊM</a>
                                     </div>

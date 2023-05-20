@@ -24,11 +24,11 @@
                     @foreach ($slides as $slide)
                         @if ($slide->id === $slideFirst)
                             <div class="carousel-item active">
-                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
+                                <img src="{{ asset('/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
                             </div>
                         @else
                             <div class="carousel-item">
-                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
+                                <img src="{{ asset('/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
                             </div>
                         @endif
                     @endforeach
@@ -48,7 +48,7 @@
                 <div class="banners">
                     @foreach ($specialBrand as $brand)
                         <a href="{{ route('brand.product',['id' => $brand->id]) }}">
-                            <img src="{{ asset('storage/images/brands/'.$brand->img_path) }}" class="img-responsive mt-3" width="150px" height="100px"/>
+                            <img src="{{ asset('/images/brands/'.$brand->img_path) }}" class="img-responsive mt-3" width="150px" height="100px"/>
                         </a>
                     @endforeach
                 </div>
@@ -59,7 +59,7 @@
         @foreach ($brands as $brand)
             <div class="col-lg-3">
                 <a href="{{ route('brand.product',['id' => $brand->id]) }}">
-                    <img src="{{ asset('storage/images/brands/'.$brand->img_path) }}" class="img-responsive" width="300px" height="150px"/>
+                    <img src="{{ asset('/images/brands/'.$brand->img_path) }}" class="img-responsive" width="300px" height="150px"/>
                 </a>
             </div>           
         @endforeach
@@ -81,7 +81,7 @@
                     <div class="product-item">
                         <div class="image">
                             <a href="{{ route('product.detail',['id' => $product->id]) }}">
-                                <img src="{{ asset('storage/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
+                                <img src="{{ asset('/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
                             </a>
                             <a href="{{ route('product.detail',['id' => $product->id]) }}" class="more-info"><i class="fas fa-search"></i> XEM THÊM</a>
                         </div>

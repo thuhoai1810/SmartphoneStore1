@@ -26,7 +26,7 @@ Các sản phẩm
                                 <div class="product-item">
                                     <div class="image">
                                         <a href="{{ route('product.detail',['id' => $product->id]) }}">
-                                            <img src="{{ asset('storage/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
+                                            <img src="{{ asset('/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
                                         </a>
                                         <a href="{{ route('product.detail',['id' => $product->id]) }}" class="more-info"><i class="fas fa-search"></i> XEM THÊM</a>
                                     </div>
